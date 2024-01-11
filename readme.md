@@ -186,7 +186,8 @@ Vi ska nu lägga till en rubrik och en paragraf i ```body``` taggen. Det gör vi
 <p>Detta är min första webbsida</p>
 ```
 
-Spara sedan filen. Du ska nu använda en extension som heter Live Server för att ladda sidan i din webbläsare.
+Spara sedan filen. Du ska nu använda en extension som heter Live Server för att 
+ladda sidan i din webbläsare.
 
 ### Live Server
 
@@ -197,8 +198,8 @@ När du har aktiverat Live Server så kan du klicka på “Go Live” i nedre h�
 ### Test
 
 * Vad är HTML för något?
-* Vad är CSS för något?
-
+* Varför döper vi filen till index.html?
+* Vad är en tagg?
 
 ### Versionshantering
 
@@ -208,10 +209,261 @@ För att versionshantera din kod så behöver du först lägga till filerna i et
 
 När du har lagt till filerna i staging area så behöver du skriva en commit message. Det är ett meddelande som beskriver vad du har gjort. Meddelandet skriver du i fältet “Message” och sedan klickar du på "Commit" knappen.
 
-När en comm
+När en commit är gjord så behöver du skicka upp den till GitHub. Det gör du genom att klicka på "Sync Changes" knappen (som bör synas istället för "Commit" knappen).
 
-## CSS
+När du väl pushat din kod till GitHub kan du öppna repositoryt på GitHub och se att din kod finns där.
+
+**Tänk på att du är ansvarig för allt material du laddar upp och har på GitHub. Det är inte tillåtet att ladda upp material som du inte har rättigheter till.**
 
 ## En bild
 
+För att göra sidan lite mer visuellt intressant ska vi nu lägga till en bild. Det kan vara en bild som du har tagit själv eller en bild som du har hittat på nätet. Det är viktigt att du har rättigheter till bilden och får använda den.
+
+Först behöver du spara bilden så att Visual Studio Code kan hitta den. Om du vill kan du skapa en ny mapp i projektet, döpa den till ```img``` och spara bilden där. Du kan också spara bilden i samma mapp som index.html. För att spara bilden är den enklast att dra den från utforskaren i Windows till Visual Studio Code.
+
 **Ett viktigt tips när du arbetar med filer för webben och GitHub är att du inte ska använda mellanslag i filnamn. Istället så ska du använda dig av bindestreck. Undvik även stora bokstäver och specialtecken.**
+
+När du har sparat bilden så behöver du lägga till den i din webbsida. Det gör du genom att använda en ```img``` tagg. Det gör du genom att skriva följande i ```body``` taggen.
+
+```html
+<img src="img/bild.jpg" alt="En bild">
+```
+
+### Bildstorlek
+
+Det är viktigt att tänka på bildstorleken när du lägger till bilder på en webbsida. En stor bild tar lång tid att ladda och det kan göra att webbsidan känns långsam. Det är därför viktigt att du anpassar bildstorleken så att den inte är större än vad den behöver vara.
+
+Vill du minska bildstorleken kan du använda någon form av bildredigeringsprogram. Photoshop eller Paint funkar eller om du vill hitta något onlinealternativ så kan du prova det.
+
+Kontrolla bildens upplösning och storlek genom att högerklicka på bilden och välja “Egenskaper”. Du kan även använda dig av en tjänst som heter [TinyPNG](https://tinypng.com/) för att minska bildstorleken.
+
+### Versionshantering
+
+Precis som tidigare så är det viktigt att du versionshanterar din kod. Det gör du genom att lägga till filerna i staging area, skriva en commit message och sedan pusha koden till GitHub. Se de tidigare instruktionerna för hur du gör det.
+
+**Versionshanteringen är en historik för din kod. Det gör att du kan gå tillbaka till en tidigare version av din kod om du skulle behöva det.**
+
+## CSS
+
+Nu ska vi styla vår webbsida med hjälp av CSS. Vi kommer att använda oss av en extern CSS-fil för att styla webbsidan. Det gör vi för att det är ett bra sätt att separera HTML och CSS. Det gör det även enklare att arbeta med webbsidan.
+
+Skapa en ny fil som heter style.css genom att klicka på “File” och sedan “New File”. Döp filen till style.css genom att klicka på “File” och sedan “Save As”. Skriv in namnet på filen och klicka på “Save”.
+
+**Om du vill så kan du skapa en ny mapp som heter css och spara filen där. Precis som för bilderna så kan det hjälpa med strukturen för ditt projekt.**
+
+Vi ska nu länka CSS-filen till HTML-filen. Det gör vi genom att lägga till en ```link``` tagg i ```head``` taggen. Det gör vi genom att skriva följande i ```head``` taggen.
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+### Styla webbsidan
+
+En bra start när du stylar en webbsida är att du lägger till lite marginaler, gör sidan mer lättläst och ändrar typsnittet.
+
+Webbläsaren har en del inbyggda stilar och en del av dem kan vi behöver ändra på.
+
+### Centera innehållet
+
+För att centrera ditt innehåll på din webbsida ska vi göra ett par ändringar. Vi kommer att göra detta med hjälp av en CSS-regel. En CSS-regel består av en selektor och en deklaration. Selektorn bestämmer vilka element som regeln ska gälla för och deklarationen bestämmer hur elementen ska se ut.
+
+När vi väl har skapat en CSS-regel så kan vi använda den flera gånger. För att göra det så behöver vi lägga till en klass på de element som ska använda CSS-regeln. Det gör vi genom att lägga till en ```class``` attribut på elementet.
+
+**Ett element är en tagg i HTML.**
+
+I ```style.css```
+```css
+.container {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+```
+
+Öppna sedan ```index.html``` och redigera den.
+Flytta rubriken och paragrafen in i en ```main``` tagg med klassen ```container```. Main taggen är en tagg som används för att markera huvudinnehållet på en webbsida.
+
+I ```index.html```
+```html
+<main class="container">
+  <h1>Min webbsida</h1>
+  <p>Detta är min första webbsida</p>
+</main>
+```
+
+Spara sidan och titta på den i webbläsaren, om du har Live Server igång så behöver du bara uppdatera sidan.
+
+### Fixa bildstorleken
+
+Bilden är för stor och tar för mycket plats på sidan. Vi ska nu ändra storleken på bilden med hjälp av CSS.
+
+I ```style.css```
+```css
+img {
+  max-width: 100%;
+}
+```
+
+### Versionshantering
+
+Precis som tidigare så är det viktigt att du versionshanterar din kod. Det gör du genom att lägga till filerna i staging area, skriva en commit message och sedan pusha koden till GitHub. Se de tidigare instruktionerna för hur du gör det.
+
+### Typsnitt
+
+Sidans typsnitt är standard-fonten som används av webbläsaren. Vi ska nu ändra typsnittet med hjälp av CSS. Det enklaste sättet att göra det är att ändra fonten i ```body``` taggen.
+
+I ```style.css```
+```css
+body {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+```
+
+Detta ändrar typsnittet till sans-serif och ändrar storleken på texten till 1.2rem. En rem är en enhet som används för att mäta storleken på text. En rem är lika stor som storleken på texten i ```html``` taggen.
+
+### Annan font
+
+Du kan självklart ändra till andra fonter, Visual Studio Code kan garanterat ge dig några förslag från ditt operativsystem. Men det är intressantare att prova någon font från en tjänst som [Google Fonts](https://fonts.google.com/).
+
+På Google Fonts så kan du välja en font och sedan klicka på “Select this style” för att få en kodsnutt som du kan kopiera och klistra in i din CSS-fil. Du behöver även länka till fonten i ```head``` taggen i ditt HTML-dokument.
+
+I ```style.css```
+```css
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+```
+
+I ```index.html```
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+```
+
+Testa och prova en eller flera fonter. Hitta en som du tycker om och som passar till din webbsida.
+
+Du kan även ange olika fonter för olika element med olika klasser. Det gör du genom att använda dig av en CSS-regel med en klass.
+
+### Versionshantering
+
+Du har nu gjort några ändringar, lägg till filerna i staging area, skriv en commit message som beskriver vad du har gjort/ändrat och pusha koden till GitHub.
+
+### Test
+
+* Vad är en CSS-regel och vad består den av?
+* Vad behöver du göra för att använda din CSS i din HTML?
+* Vad är en klass?
+
+## Färger
+
+Det är inte helt ovanligt att någon som du eller någon som jobbar på en hemsida vill ändra färger på element. För att göra det så använder du CSS och det styrs med egenskaperna ```color``` och ```background-color```.
+
+### Ändra färg på rubriken
+
+För att ändra färg på rubriken så behöver du lägga till en CSS-regel för ```h1``` taggen. Det gör du genom att skriva följande i ```style.css```.
+
+```css
+h1 {
+  color: #333;
+}
+```
+
+Du kan även skapa en klass för rubriken och använda den istället. Det gör du genom att lägga till en ```class``` attribut på ```h1``` taggen.
+
+I ```style.css```
+```css
+.rubrik {
+  color: #333;
+}
+```
+
+I ```index.html```
+```html
+<h1 class="rubrik">Min webbsida</h1>
+```
+
+### Ändra färger på sidan
+
+Testa att ändra färger på både text och bakgrund, lägg till mer innehåll och testa att ändra färg på det. Försök att vara noga med valet av färger så att din text är lättläst.
+
+Vill du prova att skapa färgscheman kan du testa ett verktyg som heter [Coolors](https://coolors.co/).
+
+### Versionshantering
+
+Nu är det dags igen, du kommer förhoppningsvis ihåg hur du versionshanterar din kod. Lägg till filerna i staging area, skriv en commit message som beskriver vad du har gjort/ändrat och pusha koden till GitHub.
+
+## Hypertext och länkar
+
+HTML står för Hypertext Markup Language. Hypertext är text som innehåller länkar till andra dokument. Det är det som gör webben till webben. Vi ska nu lägga till en länk till en annan sida.
+
+### Länka till en annan sida
+
+Vi ska nu lägga till en länk till en annan sida. Det gör vi genom att använda en ```a``` tagg. ```a``` taggen är ett anchor-element som används för att skapa länkar. I taggen så behöver vi ange en ```href``` attribut som innehåller länken (url) till sidan som vi vill länka till.
+
+```html
+<a href="https://www.google.com">Google</a>
+```
+
+Lägg till länken i ```index.html``` och spara filen. Titta på sidan i webbläsaren och testa länken.
+
+### Länka till en annan sida i samma mapp
+
+Vi ska nu lägga till en länk till en annan sida i samma mapp. Du behöver först skapa en ny fil som heter about.html genom att klicka på “File” och sedan “New File”. Döp filen till about.html genom att klicka på “File” och sedan “Save As”. Skriv in namnet på filen och klicka på “Save”.
+
+```html
+<a href="about.html">Om</a>
+```
+
+Lägg till länken i ```index.html``` och spara filen. Titta på sidan i webbläsaren och testa länken.
+
+Redigera sedan ```about.html``` och lägg till en länk tillbaka till ```index.html```.
+
+```html
+<a href="index.html">Tillbaka</a>
+```
+
+### Viktigt
+
+Glömt inte att lägga till den grundläggande HTML-strukturen för en webbsida i ```about.html```. Du gör det genom att skriva ```html:5``` och sedan trycka på tabb-tangenten precis som för index sidan. 
+
+När det är gjort kan du redigera innehållet och länka till CSS-filen precis som för index sidan.
+
+### Versionshantering
+
+Du börjar kunna det här och vanan att versionshantera din kod börjar sätta sig. Lägg till filerna i staging area, skriv en commit message som beskriver vad du har gjort/ändrat och pusha koden till GitHub.
+
+## Test
+
+* Hur använder du en ```a``` tagg för att skapa en länk?
+* Vad heter egenskapen för anchor-elementet som används för att skapa länkar?
+* Vad är en url?
+
+## Skapa innehåll
+
+Nu är det upp till dig att skapa innehåll till din webbsida. Du kan skapa en sida om dig själv, en sida om något du tycker om eller något annat som du tycker är intressant.
+
+På om sidan så lägger du till en länk till ditt GitHub repository och en länk till din GitHub profil.
+
+## Hosting med GitHub Pages
+
+Nu ska vi hosta din webbsida med hjälp av GitHub Pages. GitHub låter oss använda repositoryt som en webbserver. Det gör att vi kan visa upp vår webbsida på internet.
+
+Surfa till ditt repository på GitHub och klicka på “Settings”. Scrolla sedan ner till “GitHub Pages” och klicka på “Source”. Välj “main” och klicka på “Save”.
+
+Det kan ta några minuter innan din webbsida är tillgänglig. När den är det så kan du surfa till ```https://<användarnamn>.github.io/<repository>```.
+
+## Versionshantering
+
+Om du önskar att styra över vilken version av din hemsida som visas upp på GitHub Pages så kan du använda dig av en branch. En branch är en kopia av ditt repository som du kan göra ändringar i utan att påverka originalet. Du kan sedan skapa en pull request för att föreslå ändringar till originalet.
+
+För att skapa en branch så klickar du på “Branch: main” och skriver in ett namn på din branch. Klicka sedan på “Create branch”.
+
+Du kan nu göra ändringar i din branch och sedan skapa en pull request för att föreslå ändringar till originalet.
+
+## Skapa fritt
+
+Nu har du verktygen för att skapa en webbsida. Det finns brappiljarder av instruktioner och tutorials på nätet som du kan använda dig av för att lära dig mer.
