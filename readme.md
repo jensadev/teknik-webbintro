@@ -31,7 +31,7 @@ Tillsammans med Git så använder vi oss av GitHub som är en tjänst för att l
 
 ### Installation
 
-För att installera Git så går du till https://git-scm.com/ och laddar ner programmet. När du installerar så kan du välja att använda Git Bash som terminal, det är en terminal som är anpassad för att användas med Git.
+Det kan vara så att du redan har Git installerat på din dator, testa genom att öppna start-menyn och söka efter git". Det du ska hitta är "Git Bash". Om du inte har det så kan du ladda ner det från https://git-scm.com/ och installera det.
 
 Ladda ned programmet och starta installationen (om den ställer massa frågor så svara enligt nedan).
 
@@ -204,6 +204,17 @@ När du har aktiverat Live Server så kan du klicka på “Go Live” i nedre h�
 ### Versionshantering
 
 Nu ska du använda Git för att versionshantera din kod. Du kommer att göra det med hjälp av Visual Studio Code.
+
+**Innan du kan göra commits så måste du berätta för Git vem du är.**
+
+Öppna Git Bash och skriv följande kommandon:
+
+```bash
+git config --global user.name "DITT NAMN ELLER ANVÄNDARNAMN PÅ GITHUB"
+git config --global user.email "DIN E-POSTADRESS SOM DU ANVÄNDE PÅ GITHUB"
+```
+
+**Det kan även vara så att VSCode kommer starta Git credentials manager (popup/webbläsarlogin) och be dig logga in på GitHub. Detta är för att autentisera VSCode så att du kan använda Git med det.**
 
 För att versionshantera din kod så behöver du först lägga till filerna i ett så kallat staging area. Det gör du genom att klicka på “Source Control” (```CTRL+SHIFT+G```) eller hitta det i "View" menyn i Visual Studio Code. Klicka sedan på “+” för att lägga till filerna i staging area.
 
