@@ -17,7 +17,8 @@
       </ul>
     </nav>
     <h1>Om min sida</h1>
-    <p>Jag heter Jens</p>
+    <p>Jag heter Jens och det här ett skolarbete jag har gjort i kursen teknik 1.</p>
+    <p>Koden finns på min <a href="https://github.com/jensadev" taget="_blank">GitHub</a>.</p>
 
     <p>Starttips på sidan med emmet</p>
     <pre>
@@ -38,6 +39,7 @@
       const button = document.querySelector('#click');
       let count = 0;
       button.addEventListener('click', () => {
+        button.classList.add('snurra');
         count++;
         button.textContent = `Count: ${count}`;
       });
