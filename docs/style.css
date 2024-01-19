@@ -13,3 +13,10 @@ main {
   margin-inline: auto;
   padding: 2rem;
 }
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
