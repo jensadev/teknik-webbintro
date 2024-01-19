@@ -17,8 +17,31 @@
       </ul>
     </nav>
     <h1>Om min sida</h1>
-    <p>Emmet tips nav>ul.navigation>li*2>a</p>
     <p>Jag heter Jens</p>
+
+    <p>Starttips på sidan med emmet</p>
+    <pre>
+      html:5 tab
+      main tab
+      nav>ul.navigation>li*2>a tab
+    </pre>
+
+    <h2>Mina länkar</h2>
+    <ul>
+      <li>
+        <a target="_blank" href="https://google.com">Google</a>
+      </li>
+    </ul>
+
+    <button id="click">Count: 0</button>
+    <script>
+      const button = document.querySelector('#click');
+      let count = 0;
+      button.addEventListener('click', () => {
+        count++;
+        button.textContent = `Count: ${count}`;
+      });
+    </script>
   </main>
 </body>
 
